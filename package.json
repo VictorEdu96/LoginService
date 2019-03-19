@@ -1,29 +1,31 @@
 {
   "name": "loginservice",
   "version": "1.0.0",
-  "description": "Login authentication service.",
-  "main": "server.js",
+  "description": "Login application",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VictorEdu96/LoginService.git"
   },
-  "author": "Victor Pulido",
+  "author": "VictorEdu96",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/VictorEdu96/LoginService/issues"
   },
   "homepage": "https://github.com/VictorEdu96/LoginService#readme",
   "dependencies": {
-    "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
-    "cookie-parser": "^1.4.3",
+    "connect-mongodb-session": "^2.1.1",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
-    "morgan": "^1.9.1",
-    "mysql2": "^1.6.5",
-    "sequelize": "^4.42.0"
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.19"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
