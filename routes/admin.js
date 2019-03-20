@@ -18,6 +18,10 @@ router.post('/login', (req, res) => {
     console.log(req.body.password);
 })
 
+router.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "views", "dashboard.html"));
+})
+
 
 
 module.exports = router;
