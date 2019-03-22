@@ -8,8 +8,10 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 
 const User = require("./models/user");
 
+// const MONGODB_URI = 'mongodb://localhost:27017/test';
 const MONGODB_URI =
-  "mongodb+srv://victoredu96:FYtnxXkdBEMp9yh@cluster0-o9vpb.mongodb.net/test?retryWrites=true";
+  "mongodb+srv://victoredu96:3N4FCu1OonlGYH4B@cluster0-o9vpb.mongodb.net/test?retryWrites=true'3N4FCu1OonlGYH4B";
+
 
 const app = express();
 const store = new MongoDBStore({
@@ -33,7 +35,7 @@ app.use(
 app.use(adminRoutes);
 
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI, { useNewUrlParser: true })
   .then(result => {
     User.findOne().then(user => {
       if (!user) {
