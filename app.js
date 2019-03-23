@@ -10,7 +10,7 @@ const User = require("./models/user");
 
 // const MONGODB_URI = 'mongodb://localhost:27017/test';
 const MONGODB_URI =
-  "mongodb+srv://victoredu96:3N4FCu1OonlGYH4B@cluster0-o9vpb.mongodb.net/test?retryWrites=true'3N4FCu1OonlGYH4B";
+  "mongodb+srv://victoredu96:3N4FCu1OonlGYH4B@cluster0-o9vpb.mongodb.net/test?retryWrites=true";
 
 
 const app = express();
@@ -40,10 +40,15 @@ mongoose
     User.findOne().then(user => {
       if (!user) {
         const user = new User({
-          username: "John",
-          password: "queso"
+          username: "Luis",
+          password: "12345",
+          rol: {
+            name: "admin"
+          }
         });
-        user.save();
+        user.save((error) => {
+          console.log(error)
+        });
       }
     });
     app.listen(3000);
